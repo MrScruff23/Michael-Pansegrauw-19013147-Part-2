@@ -18,3 +18,13 @@ D:\School\2nd semester\GADE6112\Michael Pansegrauw_ 19013147 POE\Pichael Pansegr
 D:\School\2nd semester\GADE6112\Michael Pansegrauw_ 19013147 POE\Pichael Pansegrauw 19013147 Part 2\Part_1\Part_1\obj\Debug\Part_1.csproj.CoreCompileInputs.cache
 D:\School\2nd semester\GADE6112\Michael Pansegrauw_ 19013147 POE\Pichael Pansegrauw 19013147 Part 2\Part_1\Part_1\obj\Debug\Part_1.exe
 D:\School\2nd semester\GADE6112\Michael Pansegrauw_ 19013147 POE\Pichael Pansegrauw 19013147 Part 2\Part_1\Part_1\obj\Debug\Part_1.pdb
+D:\School\2nd semester\GADE6112\Michael Pansegrauw_ 19013147 POE\Michael-Pansegrauw-19013147-Part-2\Part_2\Part_1\bin\Debug\Part_1.exe.config
+D:\School\2nd semester\GADE6112\Michael Pansegrauw_ 19013147 POE\Michael-Pansegrauw-19013147-Part-2\Part_2\Part_1\bin\Debug\Part_1.exe
+D:\School\2nd semester\GADE6112\Michael Pansegrauw_ 19013147 POE\Michael-Pansegrauw-19013147-Part-2\Part_2\Part_1\bin\Debug\Part_1.pdb
+D:\School\2nd semester\GADE6112\Michael Pansegrauw_ 19013147 POE\Michael-Pansegrauw-19013147-Part-2\Part_2\Part_1\obj\Debug\Part_1.csprojAssemblyReference.cache
+D:\School\2nd semester\GADE6112\Michael Pansegrauw_ 19013147 POE\Michael-Pansegrauw-19013147-Part-2\Part_2\Part_1\obj\Debug\Part_1.Properties.Resources.resources
+D:\School\2nd semester\GADE6112\Michael Pansegrauw_ 19013147 POE\Michael-Pansegrauw-19013147-Part-2\Part_2\Part_1\obj\Debug\Part_1.UI.resources
+D:\School\2nd semester\GADE6112\Michael Pansegrauw_ 19013147 POE\Michael-Pansegrauw-19013147-Part-2\Part_2\Part_1\obj\Debug\Part_1.csproj.GenerateResource.cache
+D:\School\2nd semester\GADE6112\Michael Pansegrauw_ 19013147 POE\Michael-Pansegrauw-19013147-Part-2\Part_2\Part_1\obj\Debug\Part_1.csproj.CoreCompileInputs.cache
+D:\School\2nd semester\GADE6112\Michael Pansegrauw_ 19013147 POE\Michael-Pansegrauw-19013147-Part-2\Part_2\Part_1\obj\Debug\Part_1.exe
+D:\School\2nd semester\GADE6112\Michael Pansegrauw_ 19013147 POE\Michael-Pansegrauw-19013147-Part-2\Part_2\Part_1\obj\Debug\Part_1.pdb

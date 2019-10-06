@@ -35,6 +35,8 @@ namespace Part_1
         // Both the type of unit, as well as their X and Y position, should be randomised; 
         // Meelee: int xPos, int yPos, double maxHealth, double attack, int team
         // Ranged: int xPos, int yPos, double maxHealth, double attack, int team
+
+        // method returns a unit after creating it and assigning valuse to it
         public Building CreateBuilding(int team)
         {
             int xPos = rand.Next(0, 20);
@@ -59,6 +61,7 @@ namespace Part_1
             }
         }
 
+        // displays the units onto the GUI
         public void DisplayAll()
         {
             foreach (Button butt in buildingButton)
@@ -73,6 +76,7 @@ namespace Part_1
             Program.UI.txtUnitInfo.Text = butt.Unit.ToString();
         }
 
+        // updates the position of the unit so it doesnt need to update the entire GUI
         public void UpDatePosition()
         {
             int Ysize = Program.UI.grbMap.Height / 20;

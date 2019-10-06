@@ -8,6 +8,7 @@ namespace Part_1
 {
     class ResourceBuilding : Building
     {
+        // enum for resource type
         public enum ResourceType
         {
             Minerals,
@@ -38,7 +39,7 @@ namespace Part_1
         */
 
 
-        //resources per round has a default value incase no alternative value is given to resourcesPerRound
+        // resources per round has a default value incase no alternative value is given to resourcesPerRound
         public ResourceBuilding(int xPos, int yPos, int health, int team, int resourcesRemaining, int resourcesPerRound = 10) 
         {
             this.xPos = xPos;
@@ -51,14 +52,17 @@ namespace Part_1
             this.resourcesPerRound = resourcesPerRound;
         }
 
+        // checks if the unit is destroyed or if it needs to be destroyed
         public override void Destroy()
         {
             if (health <= 0)
             {
                 symbol = "D";
+                health = 0;
             }
         }
 
+        // to string to display information
         public override string ToString()
         {
             string str = string.Format(
@@ -67,12 +71,13 @@ namespace Part_1
                     "\nresources per round: " + resourcesPerRound +
                     "\nResources remaining: " + resourcesRemaining +
                     "\nResources Generated" + resourcesGenerated +
-                    "\n + Team : " + (team + 1) + " + " +
+                    "\n + Team : " + team + " + " +
                     "\nResource type: " + resourceType +
                     "\nSymbol: " + Symbol);
             return str;
         }
 
+        // adds the resource to the main resources colection place
         public void GenerateResources() 
         {
             int Temp = resourcesGenerated;

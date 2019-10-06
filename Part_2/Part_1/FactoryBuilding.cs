@@ -8,6 +8,7 @@ namespace Part_1
 {
     class FactoryBuilding : Building
     {
+        // indicates what type of unit the building will spawn
         public enum unitType
         {
             MeeleeUnit,
@@ -15,7 +16,7 @@ namespace Part_1
         }
 
         private unitType typeOfUnit;
-        private int productionSpeed;
+        private int productionSpeed; 
         private bool spawnpointAbove; // indicates whether the spawn point is above or not
 
         public int ProductionSpeed
@@ -30,7 +31,7 @@ namespace Part_1
             this.health = health;
             this.maxHealth = health;
             this.team = team;
-            this.symbol = "R";
+            this.symbol = "F";
             this.productionSpeed = productionSpeed;
             if (YPos < 20)
             {
@@ -69,7 +70,7 @@ namespace Part_1
                     "\nProduction Speed: " + productionSpeed +
                     "\nType of unit: " + productionSpeed.ToString() +
                     "\nSpawn-point: {0}" +
-                    "\n + Team : " + (team + 1) + " + " +
+                    "\n + Team : " + team + " + " +
                     "\nSymbol: " + symbol, (spawnpointAbove) ? "above": "bellow" );
             return str;
         }

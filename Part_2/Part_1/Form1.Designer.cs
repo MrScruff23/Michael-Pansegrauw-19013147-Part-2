@@ -50,6 +50,7 @@
             this.grbMap.TabIndex = 0;
             this.grbMap.TabStop = false;
             this.grbMap.Text = "Map";
+            this.grbMap.Enter += new System.EventHandler(this.grbMap_Enter);
             // 
             // btnStart
             // 

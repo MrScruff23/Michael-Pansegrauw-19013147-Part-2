@@ -125,6 +125,7 @@ protected bool isAttacking;
             health -= damage;
         }
 
+        // checks of a unit is in range or not
         public override bool IsInRange(Unit u)
         {
             int distance = -1;
@@ -138,6 +139,7 @@ protected bool isAttacking;
             return (distance <= attackRange)? true: false;
         }
 
+        // finds the unid that is clossest enemy unit to this unit
         public override Unit FindClosestUnit(List<ButtonUnit> listOfUnits)
         {
             int distance = -1;
@@ -159,6 +161,7 @@ protected bool isAttacking;
             return enemy;
         }
 
+        // record the direction the unit needs to move inorder to get closser to the unit
         public override Direction DirectionOfEnemy(Unit enemy)
         {
             int xdis = enemy.XPos - xPos;

@@ -18,6 +18,7 @@ namespace Part_1
     */
     class RangedUnit : Unit
     {
+        // properties  to access variables
         public int XPos
         {
             get { return xPos; }
@@ -62,6 +63,7 @@ namespace Part_1
             set { isAttacking = value; }
         }
 
+        // constructor to assign variable values to atribute of the object
         public RangedUnit(int xPos, int yPos, double maxHealth, double attack, int range, int speed, int team)
         {
             base.xPos = xPos;
@@ -77,6 +79,7 @@ namespace Part_1
             base.name = "Roach";
         }
 
+        // method to make the unit take damage
         public override void Combat(double damage)
         {
             health -= damage;
@@ -206,6 +209,7 @@ namespace Part_1
             }
         }
 
+        // record the direction the unit needs to move inorder to get closser to the unit
         public override Direction DirectionOfEnemy(Unit enemy)
         {
             int xdis = enemy.XPos - xPos;
