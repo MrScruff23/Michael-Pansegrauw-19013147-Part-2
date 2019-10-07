@@ -97,6 +97,7 @@ namespace Part_1
             unitButton.Add(new ButtonUnit(u));
             unitButton[unitButton.Count - 1].ForeColor = (unitButton[unitButton.Count - 1].Unit.Team == 0) ? Color.Blue : Color.Red;
             unitButton[unitButton.Count - 1].SetBounds(unitButton[unitButton.Count - 1].Unit.XPos * size, unitButton[unitButton.Count - 1].Unit.YPos * size, size, size);
+            unitButton[unitButton.Count - 1].Click += Button_Clicked;
             Program.UI.grbMap.Controls.Add(unitButton[unitButton.Count - 1]);
         }
 
@@ -109,6 +110,22 @@ namespace Part_1
             buildingButton[buildingButton.Count - 1].Text = buildingButton[buildingButton.Count - 1].Building.Symbol;
             buildingButton[buildingButton.Count - 1].ForeColor = (buildingButton[buildingButton.Count - 1].Building.Team == 0) ? Color.Blue : Color.Red;
             buildingButton[buildingButton.Count - 1].SetBounds(buildingButton[buildingButton.Count - 1].Building.XPos * size, buildingButton[buildingButton.Count - 1].Building.YPos * size, size, size);
+        }
+
+        protected void Button_Clicked(object sender, EventArgs e)
+        {
+            string tostring = "";
+            if (sender.GetType() == typeof(ButtonBuilding))
+            {
+                ButtonBuilding B = sender as ButtonBuilding;
+                tostring = B.Building.ToString();
+            } else if (sender.GetType() == typeof(ButtonUnit))
+            {
+                ButtonUnit B = sender as ButtonUnit;
+                tostring = B.Unit.ToString();
+            }
+            Console.WriteLine(tostring);
+            Program.UI.txtUnitInfo.Text = tostring;
         }
     }
 

@@ -102,7 +102,6 @@ namespace Part_1
                     {
                         ResourceBuilding rb = building as ResourceBuilding;
                         rb.GenerateResources();
-                        Console.WriteLine("Resources generated");
                     }
                     else if (building.GetType() == typeof(FactoryBuilding))
                     {
@@ -110,14 +109,13 @@ namespace Part_1
                         if (rounds % fb.ProductionSpeed == 0)
                         {
                             map.AddUnit(fb.CreateUnit());
-                            Console.WriteLine("Unit spawned");
                         }
                     }
 
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex + "\n Building problem ");
+                    Console.WriteLine(ex);
                 }
             }
             map.UpDatePosition();
