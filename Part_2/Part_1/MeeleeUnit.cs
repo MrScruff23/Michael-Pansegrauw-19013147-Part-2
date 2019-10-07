@@ -16,7 +16,8 @@ protected int attackRange;
 protected int team;
 protected bool isAttacking;
 */
-    class MeeleeUnit: Unit
+    [Serializable]
+    class MeeleeUnit : Unit
     {
         public MeeleeUnit(int xPos, int yPos, double maxHealth, double attack, int speed, int team)
         {
@@ -90,7 +91,7 @@ protected bool isAttacking;
                 Console.WriteLine(ex);
             }
         }
-        
+
         public override bool DestroyUnit() // handles destruction and death of unit
         {
             if (health <= 0)
@@ -107,9 +108,9 @@ protected bool isAttacking;
             {
                 string s = string.Format(
                     "Position (x, y): (" + xPos + ", " + yPos + ")" +
-                    "\nHealth\\MaxHealth : " + health + "\\" + maxHealth + 
-                    "\nAttack : " + attack + 
-                    "\nAttack Range : " + attackRange + 
+                    "\nHealth\\MaxHealth : " + health + "\\" + maxHealth +
+                    "\nAttack : " + attack +
+                    "\nAttack Range : " + attackRange +
                     "\n + Team : " + (team + 1) + " + " +
                     "\nIs attacking : " + isAttacking);
                 return s;
@@ -132,11 +133,12 @@ protected bool isAttacking;
             try
             {
                 distance = Convert.ToInt32(Math.Sqrt(Math.Pow((u.XPos - xPos), 2) + Math.Pow((u.YPos - yPos), 2))); // using pythagorus to deturmin the distance the unit is
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine(ex);
             }
-            return (distance <= attackRange)? true: false;
+            return (distance <= attackRange) ? true : false;
         }
 
         // finds the unid that is clossest enemy unit to this unit

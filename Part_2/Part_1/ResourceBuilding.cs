@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Part_1
 {
+    [Serializable]
     class ResourceBuilding : Building
     {
         // enum for resource type
@@ -15,7 +16,7 @@ namespace Part_1
             VespienGas
         }
 
-        private string resourceType;
+        private ResourceType resourceType;
         private int resourcesGenerated = 0;
         private int resourcesPerRound;
         private int resourcesRemaining;
@@ -40,7 +41,7 @@ namespace Part_1
 
 
         // resources per round has a default value incase no alternative value is given to resourcesPerRound
-        public ResourceBuilding(int xPos, int yPos, int health, int team, int resourcesRemaining, int resourcesPerRound = 10) 
+        public ResourceBuilding(int xPos, int yPos, int health, int team, int resourcesRemaining, int resourcesPerRound = 10, ResourceType resourceType = ResourceType.Minerals) 
         {
             this.xPos = xPos;
             this.yPos = yPos;
@@ -50,6 +51,7 @@ namespace Part_1
             this.symbol = "R";
             this.resourcesRemaining = resourcesRemaining;
             this.resourcesPerRound = resourcesPerRound;
+            this.resourceType = resourceType;
         }
 
         // checks if the unit is destroyed or if it needs to be destroyed

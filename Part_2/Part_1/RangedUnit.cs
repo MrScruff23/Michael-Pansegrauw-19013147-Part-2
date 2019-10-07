@@ -16,6 +16,7 @@ namespace Part_1
     protected int team;
     protected bool isAttacking;
     */
+    [Serializable]
     class RangedUnit : Unit
     {
         // properties  to access variables

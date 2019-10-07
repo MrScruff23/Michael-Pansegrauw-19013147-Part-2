@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace Part_1
 {
+    [Serializable]
     class Map
     {
         public object[,] map = new Unit[20, 20];
@@ -90,67 +91,11 @@ namespace Part_1
             }
         }
 
-        public bool Save() // returns a boolean value for indication to whether the process was successful or not
-        {
-            try
-            {
-                BinaryFormatter bf = new BinaryFormatter();
-                using (FileStream fs = new FileStream("unit.dat", FileMode.Create, FileAccess.Write, FileShare.None))
-                {
-                    bf.Serialize(fs, unitButton);
-                    Console.WriteLine("saved units!");
-                }
-                using (FileStream fs = new FileStream("building.dat", FileMode.Create, FileAccess.Write, FileShare.None))
-                {
-                    bf.Serialize(fs, buildingButton);
-                    Console.WriteLine("saved buildings!");
-                }
-                using (FileStream fs = new FileStream("map.dat", FileMode.Create, FileAccess.Write, FileShare.None))
-                {
-                    bf.Serialize(fs, buildingButton);
-                    Console.WriteLine("saved buildings!");
-                }
-                return true;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-                return false;
-            }
-        }
-
-        public bool Load() // returns a boolean value for indication to whether the process was successful or not
-        {
-            try
-            {
-                BinaryFormatter bf = new BinaryFormatter();
-                using (FileStream f = new FileStream("unit.dat", FileMode.Open, FileAccess.Read, FileShare.None))
-                {
-                    unitButton = (List<ButtonUnit>)bf.Deserialize(f);
-                    Console.WriteLine("unit Buttons loaded");
-                }
-                using (FileStream f = new FileStream("building.dat", FileMode.Open, FileAccess.Read, FileShare.None))
-                {
-                    buildingButton = (List<ButtonBuilding>)bf.Deserialize(f);
-                    Console.WriteLine("unit Buttons loaded");
-                }
-                using (FileStream f = new FileStream("map.dat", FileMode.Open, FileAccess.Read, FileShare.None))
-                {
-                    map = (object[,])bf.Deserialize(f);
-                    Console.WriteLine("unit Buttons loaded");
-                }
-                return true;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-                return false;
-            }
-        }
-
+        // CREATES A BUTTUN AND ADDS THGE UNIT TO THE LIST OF UNIT BUTTONS
         public void AddUnit(Unit u)
         {
             unitButton.Add(new ButtonUnit(u));
+            unitButton[unitButton.Count - 1].ForeColor = (unitButton[unitButton.Count - 1].Unit.Team == 0) ? Color.Blue : Color.Red;
             Program.UI.grbMap.Controls.Add(unitButton[unitButton.Count - 1]);
         }
     }

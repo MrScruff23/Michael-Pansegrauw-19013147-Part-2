@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace Part_1
 {
+    [Serializable]
     public partial class UI : Form
     {
         public int rounds = 0; // variable to keep track of the number of rounds that have passed
@@ -66,13 +67,13 @@ namespace Part_1
         // calls save method for the game
         private void btnSave_Click(object sender, EventArgs e)
         {
-            GameEngine.map.Save();
+            GameEngine.Save();
         }
 
         // calls load method for the game
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            GameEngine.map.Load();
+            GameEngine.Load();
         }
 
         // ignore

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Part_1
 {
+    [Serializable]
     class FactoryBuilding : Building
     {
         // indicates what type of unit the building will spawn
@@ -24,6 +25,7 @@ namespace Part_1
             get { return productionSpeed; }
         }
 
+        // constructor      
         public FactoryBuilding(int xPos, int yPos, int health, int team, int productionSpeed)
         {
             this.xPos = xPos;
@@ -50,6 +52,7 @@ namespace Part_1
             }
         }
 
+        // creates a unit and assigns the nessesary atributes to the units
         public Unit CreateUnit()
         {
             if (typeOfUnit == unitType.MeeleeUnit) // deturmines whether a unit is a ranged unit or a meelee unit
