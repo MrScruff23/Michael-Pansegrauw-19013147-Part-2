@@ -130,6 +130,8 @@ namespace Part_1
             try
             {
                 BinaryFormatter bf = new BinaryFormatter();
+
+                // saving of units
                 using (FileStream fs = new FileStream("unit.dat", FileMode.Create, FileAccess.Write, FileShare.None))
                 {
                     List<Unit> unitSaveList = new List<Unit>();
@@ -140,6 +142,8 @@ namespace Part_1
                     bf.Serialize(fs, unitSaveList);
                     Console.WriteLine("saved units!");
                 }
+
+                // saving of buildings
                 using (FileStream fs = new FileStream("building.dat", FileMode.Create, FileAccess.Write, FileShare.None))
                 {
                     List<Building> buildingSaveList = new List<Building>();
@@ -150,17 +154,19 @@ namespace Part_1
                     bf.Serialize(fs, buildingSaveList);
                     Console.WriteLine("saved buildings!");
                 }
+
+                // saving of map
                 using (FileStream fs = new FileStream("map.dat", FileMode.Create, FileAccess.Write, FileShare.None))
                 {
                     bf.Serialize(fs, map.map);
                     Console.WriteLine("saved map!");
                 }
-                return true;
+                return true;  // returns true if the process was successfull
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
-                return false;
+                return false;  // returns false if process was un successful
             }
         }
 
@@ -169,6 +175,7 @@ namespace Part_1
             try
             {
                 BinaryFormatter bf = new BinaryFormatter();
+
                 // loading of units
                 using (FileStream f = new FileStream("unit.dat", FileMode.Open, FileAccess.Read, FileShare.None))
                 {
@@ -195,12 +202,12 @@ namespace Part_1
                     map.map = (object[,])bf.Deserialize(f);
                     Console.WriteLine("map loaded");
                 }
-                return true;
+                return true; // returns true if the process was successfull
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
-                return false;
+                return false; // returns false if process was un successful
             }
         }
 
