@@ -25,10 +25,7 @@ namespace Part_1
             int size = Program.UI.grbMap.Size.Height / 21;
             for (int i = 0; i < numberOfBuildings; i++)
             {
-                buildingButton.Add(new ButtonBuilding(CreateBuilding(i % 2)));
-                buildingButton[buildingButton.Count - 1].Text = buildingButton[buildingButton.Count - 1].Building.Symbol;
-                buildingButton[buildingButton.Count - 1].ForeColor = (buildingButton[buildingButton.Count - 1].Building.Team == 0) ? Color.Blue : Color.Red;
-                buildingButton[buildingButton.Count - 1].SetBounds(buildingButton[buildingButton.Count - 1].Building.XPos * size, buildingButton[buildingButton.Count - 1].Building.YPos * size, size, size);
+                AddBuilding(CreateBuilding(i % 2));
             }
             DisplayAll();
         }
@@ -65,6 +62,7 @@ namespace Part_1
         // displays the units onto the GUI
         public void DisplayAll()
         {
+            Program.UI.grbMap.Controls.Clear();
             foreach (Button butt in buildingButton)
             {
                 Program.UI.grbMap.Controls.Add(butt);
@@ -91,12 +89,26 @@ namespace Part_1
             }
         }
 
-        // CREATES A BUTTUN AND ADDS THGE UNIT TO THE LIST OF UNIT BUTTONS
+        // CREATES A BUTTON AND ADDS THGE UNIT TO THE LIST OF UNIT BUTTONS
         public void AddUnit(Unit u)
         {
+            int size = Program.UI.grbMap.Size.Height / 21;
+
             unitButton.Add(new ButtonUnit(u));
             unitButton[unitButton.Count - 1].ForeColor = (unitButton[unitButton.Count - 1].Unit.Team == 0) ? Color.Blue : Color.Red;
+            unitButton[unitButton.Count - 1].SetBounds(unitButton[unitButton.Count - 1].Unit.XPos * size, unitButton[unitButton.Count - 1].Unit.YPos * size, size, size);
             Program.UI.grbMap.Controls.Add(unitButton[unitButton.Count - 1]);
+        }
+
+        // creates a button for a building that is added to the simulation
+        public void AddBuilding(Building b)
+        {
+            int size = Program.UI.grbMap.Size.Height / 21;
+
+            buildingButton.Add(new ButtonBuilding(b));
+            buildingButton[buildingButton.Count - 1].Text = buildingButton[buildingButton.Count - 1].Building.Symbol;
+            buildingButton[buildingButton.Count - 1].ForeColor = (buildingButton[buildingButton.Count - 1].Building.Team == 0) ? Color.Blue : Color.Red;
+            buildingButton[buildingButton.Count - 1].SetBounds(buildingButton[buildingButton.Count - 1].Building.XPos * size, buildingButton[buildingButton.Count - 1].Building.YPos * size, size, size);
         }
     }
 

@@ -181,7 +181,7 @@ namespace Part_1
                 {
                     List<Unit> unitLoadList = new List<Unit>();
                     unitLoadList = (List<Unit>)bf.Deserialize(f);
-                    map.unitButton.Clear();
+                    map.unitButton.Clear(); // clears all other objects
                     foreach (Unit u in unitLoadList)
                     {
                         map.AddUnit(u);
@@ -192,7 +192,13 @@ namespace Part_1
                 // loading of buildings
                 using (FileStream f = new FileStream("building.dat", FileMode.Open, FileAccess.Read, FileShare.None))
                 {
-                    map.buildingButton = (List<ButtonBuilding>)bf.Deserialize(f);
+                    List<Building> buildingLoadLiast = new List<Building>();
+                    buildingLoadLiast = (List<Building>)bf.Deserialize(f);
+                    map.buildingButton.Clear(); // clears all other objects
+                    foreach (Building b in buildingLoadLiast)
+                    {
+                        map.AddBuilding(b);
+                    }
                     Console.WriteLine("building Buttons loaded");
                 }
 
@@ -202,6 +208,10 @@ namespace Part_1
                     map.map = (object[,])bf.Deserialize(f);
                     Console.WriteLine("map loaded");
                 }
+
+                // refreshes display
+                map.DisplayAll();
+
                 return true; // returns true if the process was successfull
             }
             catch (Exception ex)
